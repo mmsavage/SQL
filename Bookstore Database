@@ -1,0 +1,30 @@
+--Create bookstore database with at least 15 items and 5 columns
+
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO bookstore VALUES
+(1, "The Cruel Prince", "YA Fantasy", 10, 18.99),
+(2, "The Queen of Nothing", "YA Fantasy", 8, 18.99),
+(3, "The Wicked King", "YA Fantasy", 10, 18.99),
+(4, "A Court of Thorns and Roses", "Fantasy Romance", 6, 21.99),
+(5, "A Court of Mist and Fury", "Fantasy Romance", 2, 21.99),
+(6, "A Court of Wings and Fury", "Fantasy Romance", 4, 21.99),
+(7, "A Court of Frost and Starlight", "Fantasy Romance", 3, 10.99),
+(8, "A Court of Silver Flames", "Fantasy Romance", 7, 24.99),
+(9, "The Golden Compass", "Children's Literature", 5, 17.99),
+(10, "The Subtle Knife", "Children's Literature", 5, 17.99),
+(11, "The Amber Spyglass", "Children's Literature", 5, 17.99),
+(12, "Alone With You in the Ether", "Contemporary Romance", 10, 14.99),
+(13, "Howl's Moving Castle", "Fantasy Fiction", 3, 9.99),
+(14, "Heartstopper Volume One", "Graphic Novel", 5, 9.99),
+(15, "Heartstopper Volume Two", "Graphic Novel", 5, 9.99);
+
+
+--Display the database ordered by price
+SELECT * FROM bookstore ORDER BY price asc;
+
+--Display average price
+SELECT AVG(price) FROM bookstore;
+
+--Display max quantity
+SELECT MAX(quantity) FROM bookstore;
