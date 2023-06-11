@@ -1,0 +1,36 @@
+--In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+
+CREATE TABLE actors (actor_id INTEGER, name TEXT, movie_name TEXT);
+INSERT INTO actors VALUES (1, "Pedro Pascal", "The Unbearable Weight of Massive Talent");
+INSERT INTO actors VALUES (2, "Nicholas Cage", "The Unbearable Weight of Massive Talent");
+INSERT INTO actors VALUES (3, "Ethan Hawke", "Strange Way of Life");
+INSERT INTO actors VALUES (1, "Pedro Pascal", "Strange Way of Life");
+INSERT INTO actors VALUES (4, "Saoirse Ronan", "Little Women");
+INSERT INTO actors VALUES (5, "Timothee Chalamet", "Little Women");
+INSERT INTO actors VALUES (5, "Timothee Chalamet", "Dune");
+INSERT INTO actors VALUES (6, "Zendaya", "Dune");
+INSERT INTO actors VALUES (6, "Zendaya", "Spiderman: Homecoming");
+INSERT INTO actors VALUES (7, "Tom Holland", "Spiderman: Homecoming");
+INSERT INTO actors VALUES (7, "Tom Holland", "The Impossible");
+INSERT INTO actors VALUES (8, "Ewan McGregor", "The Impossible");
+INSERT INTO actors VALUES (8, "Ewan McGregor", "Christopher Robin");
+INSERT INTO actors VALUES (9, "Hayley Atwell", "Christopher Robin");
+INSERT INTO actors VALUES (9, "Hayley Atwell", "Captain America");
+INSERT INTO actors VALUES (10, "Chris Evans", "Captain America");
+
+CREATE TABLE movies (id INTEGER, name TEXT, critic_rating INTEGER);
+INSERT INTO movies VALUES (1, "Captain America", 80);
+INSERT INTO movies VALUES (2, "Spiderman: Homecoming", 92);
+INSERT INTO movies VALUES (3, "Little Women", 95);
+INSERT INTO movies VALUES (4, "The Unbearable Weight of Massive Talent", 87);
+INSERT INTO movies VALUES (5, "The Impossible", 81);
+INSERT INTO movies VALUES (6, "Dune", 83);
+INSERT INTO movies VALUES (7, "Christopher Robin", 72);
+INSERT INTO movies VALUES (8, "Strange Way of Life", 70);
+INSERT INTO movies VALUES (9, "The Super Mario Bros Movies", 59);
+
+--Create on JOIN SQL
+SELECT movies.name, actors.name, movies.critic_rating FROM actors
+JOIN movies
+ON actors.movie_name = movies.name
+ORDER BY critic_rating desc;
