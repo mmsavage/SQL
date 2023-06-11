@@ -2,29 +2,30 @@
 
 CREATE TABLE bookstore (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, quantity INTEGER, price INTEGER);
 
-INSERT INTO bookstore VALUES
-(1, "The Cruel Prince", "YA Fantasy", 10, 18.99),
-(2, "The Queen of Nothing", "YA Fantasy", 8, 18.99),
-(3, "The Wicked King", "YA Fantasy", 10, 18.99),
-(4, "A Court of Thorns and Roses", "Fantasy Romance", 6, 21.99),
-(5, "A Court of Mist and Fury", "Fantasy Romance", 2, 21.99),
-(6, "A Court of Wings and Fury", "Fantasy Romance", 4, 21.99),
-(7, "A Court of Frost and Starlight", "Fantasy Romance", 3, 10.99),
-(8, "A Court of Silver Flames", "Fantasy Romance", 7, 24.99),
-(9, "The Golden Compass", "Children's Literature", 5, 17.99),
-(10, "The Subtle Knife", "Children's Literature", 5, 17.99),
-(11, "The Amber Spyglass", "Children's Literature", 5, 17.99),
-(12, "Alone With You in the Ether", "Contemporary Romance", 10, 14.99),
-(13, "Howl's Moving Castle", "Fantasy Fiction", 3, 9.99),
-(14, "Heartstopper Volume One", "Graphic Novel", 5, 9.99),
-(15, "Heartstopper Volume Two", "Graphic Novel", 5, 9.99);
+INSERT INTO bookstore VALUES (1, "The Cruel Prince", "YA Fantasy", 4, 11);
+INSERT INTO bookstore VALUES (2, "The Wicked King", "YA Fantasy", 4, 11);
+INSERT INTO bookstore VALUES (3, "The Queen of Nothing", "YA Fantasy", 4, 11);
+INSERT INTO bookstore VALUES (4, "The Golden Compass", "Children's Literature", 2, 9);
+INSERT INTO bookstore VALUES (5, "The Subtle Knife", "Children's Literature", 1, 9);
+INSERT INTO bookstore VALUES (6, "The Amber Spyglass", "Children's Literature", 1, 9);
+INSERT INTO bookstore VALUES (7, "People We Meet On Vacation", "Romance", 5, 8);
+INSERT INTO bookstore VALUES (8, "Inkheart", "Middle Grade", 2, 10);
+INSERT INTO bookstore VALUES (9, "Inkspell", "Middle Grade", 2, 10);
+INSERT INTO bookstore VALUES (10, "Inkdeath", "Middle Grade", 2, 10);
+INSERT INTO bookstore VALUES (11, "The Tale of Despereaux", "Children's Literature", 3, 5);
+INSERT INTO bookstore VALUES (12, "The Shining", "Horror", 5, 12);
+INSERT INTO bookstore VALUES (13, "Doctor Sleep", "Horror", 3, 15);
+INSERT INTO bookstore VALUES (14, "Pride and Prejudice", "Literary Fiction", 3, 5);
+INSERT INTO bookstore VALUES (15, "Persuasion", "Literary Fiction", 3, 5);
 
+--Display total quantity for bookstore
+SELECT SUM(quantity) FROM bookstore;
 
---Display the database ordered by price
-SELECT * FROM bookstore ORDER BY price asc;
+--Display all items from bookstore sorted by price
+SELECT * FROM bookstore ORDER BY price;
 
---Display average price
-SELECT AVG(price) FROM bookstore;
+--Display quanitity of books from genre Children's Literature
+SELECT SUM(quantity) FROM bookstore WHERE genre="Children's Literature";
 
---Display max quantity
-SELECT MAX(quantity) FROM bookstore;
+--Display quantity of books from genre YA Fantasy
+SELECT SUM(quantity) FROM bookstore WHERE genre="YA Fantasy";
